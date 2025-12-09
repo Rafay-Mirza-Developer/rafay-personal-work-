@@ -1,0 +1,18 @@
+.container-fluid{
+    margin: 0%;
+    padding: 0%;
+}
+.banner{
+    position: fixed;
+}
+.banner-description{
+    position: relative;
+    text-align: center;
+    align-items: center;
+}
+.carousel{
+    position: absolute;
+}
+.footer{
+
+}
