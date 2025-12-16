@@ -18,25 +18,60 @@
 .carousel {
     position: relative;
 }
-
-/* Styling for the carousel caption/overlay */
-.carousel-caption {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    z-index: 5;
-    text-align: center;
-    width: 100%;
+.carousel {
+  position: relative;
+  width: 100%;
+  max-width: 1200px;     /* optional */
+  aspect-ratio: 16 / 9; /* responsive height */
+  margin: auto;
+  overflow: hidden;
 }
 
-.carousel-caption h1 {
-    color: white;
-    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
-    font-size: 3.5rem;
-    font-weight: bold;
-    margin: 0;
-    padding: 20px;
-    background-color: rgba(0, 0, 0, 0.3);
-    border-radius: 10px;
+.slide {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+}
+
+.slide.active {
+  opacity: 1;
+}
+
+/* Styling for the carousel caption/overlay */
+
+.banner-text {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: white;
+  background: rgba(0, 0, 0, 0.35); /* optional dark overlay */
+  padding: 20px;
+}
+
+/* Responsive font sizes */
+.banner-text h1 {
+  font-size: clamp(1.5rem, 4vw, 3.5rem);
+  margin-bottom: 10px;
+}
+
+.banner-text p {
+  font-size: clamp(1rem, 2.5vw, 1.5rem);
+  margin-bottom: 20px;
+}
+
+.banner-text .btn {
+  padding: 12px 28px;
+  background: #ff6b00;
+  color: white;
+  text-decoration: none;
+  font-size: clamp(0.9rem, 2vw, 1.1rem);
+  border-radius: 4px;
 }
